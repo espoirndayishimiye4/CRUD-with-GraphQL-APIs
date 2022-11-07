@@ -1,8 +1,11 @@
 const { ApolloServer } = require("apollo-server-express");
 const Express = require("express");
 
-const { typeDefs } = require("./Schema/TypeDefs");
-const { resolvers } = require("./Schema/Resolvers");
+const { typeDefs } = require("./TypeDefs");
+const { resolvers } = require("./Resolvers");
+
+const connDB = require('./config/dbConn')
+connDB()
 
 const app = Express();
 const PORT = 4500;
